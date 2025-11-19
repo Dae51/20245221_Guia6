@@ -192,6 +192,7 @@ function editarPaciente(index) {
          mensaje.innerHTML = "Se ha actualizado al paciente";
          toast.show();
          limpiarform();
+         imprimirPacientes();
        } else {
          mensaje.innerHTML = "Por favor llene todos los campos para actualizar el paciente";
          toast.show();
@@ -205,10 +206,11 @@ function eliminarPaciente(index) {
    if (index > 0 || index <= arrayPaciente.length) {
       arrayPaciente.splice(index - 1, 1);
       mensaje.innerHTML = "Registro eliminado de manera exitosa";
-      toast.show()
+      toast.show();
+      imprimirPacientes();
    } else {
       mensaje.innerHTML = "No ha sido posible eliminar el registro";
-      toast.show()
+      toast.show();
    }
 };
 
