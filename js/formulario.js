@@ -174,7 +174,7 @@ function editarPaciente(index) {
    let labelPais = Pais.options[Pais.selectedIndex].text;
    let direccion = Direccion.value;
 
-   if (arrayPaciente.length > 0 ) {
+   if (arrayPaciente.length == 0 ) {
       mensaje.innerHTML = "Por favor agregue un paciente"
       toast.show()
    } else {
@@ -191,6 +191,7 @@ function editarPaciente(index) {
 
          mensaje.innerHTML = "Se ha actualizado al paciente";
          toast.show();
+         limpiarform();
        } else {
          mensaje.innerHTML = "Por favor llene todos los campos para actualizar el paciente";
          toast.show();
