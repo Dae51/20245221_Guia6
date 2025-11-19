@@ -46,7 +46,57 @@
         </div>
     </header>
     <div class="container-lg">
-           <!-- CONTINUAR CON EL CODIGO AQUI -->
+        <!-- CONTINUAR CON EL CODIGO AQUI -->
+        <div class="row">
+            <div class="col-12">
+                <div class="shadow-lg p-3 mt-5 bg-body rounded">
+                    <div class="row">
+                        <h3>Creando una tabla con JavaScript</h3>
+                        <p>En este ejemplo, crearemos una tabla HTML utilizando JavaScript. La tabla tendrá 5 filas y 3
+                            columnas, y cada celda contendrá texto que indica su posición en la tabla.</p>
+                        <button class="btn btn-primary mb-3" id="btnCrearTabla"
+                         data-bs-toggle="modal" data-bs-target="#idModal">Crear Tabla</button>
+                        <div class="col-12">
+                            <div id="tablaContainer" class="fs-6 p-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de bootstrap -->
+        <div class="modal fade" tabindex="-1" id="idModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Definicion de la tabla<h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="POST">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="NumFila"
+                                placeholder="Numero de filas" value="1" min="1">
+                                <label for="NumFila">
+                                    <i class="bi bi-columns"></i> Numero de filas
+                                </label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="NumColumna"
+                                placeholder="Numero de columnas" value="1" min="1">
+                                <label for="NumColumna">
+                                    <i class="bi bi-layout-three-columns"></i> Numero de columnas
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="crearTabla()" id="BtnCrearTabla">Crear Tabla</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../js/tabla.js" defer></script>

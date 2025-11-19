@@ -1,37 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const containerEstudiantes = document.querySelector("#containerEstudiantes");
+    const containerEstudiantes = document.querySelector("#listaEstudiantes");
 
 
-    const btnAddEstudiante = document.querySelector("#btnAgregarEstudiante");
-    const btnViewEstudiantes = document.querySelector("#btnMostrarEstudiantes");
+    const btnAddEstudiante = document.querySelector("#btnAgregar");
+    const btnViewEstudiantes = document.querySelector("#btnMostrar");
 
-    
+
+
+    btnAddEstudiante.addEventListener("click", addEstudiante);
+    btnViewEstudiantes.addEventListener("click", viewEstudiantes);
 
     let arrayEstudiantes = new Array();
 
 
     function addEstudiante() {
         const inputCarnet = document.querySelector("#inputCarnet")
-        .value.toString().toUpperCase();
+            .value.toString().toUpperCase();
         const inputNombre = document.querySelector("#inputNombre")
-        .value.toString().toUpperCase();
-        const inputCarrera = document.querySelector("#inputCarrera")
-        .value.toString().toUpperCase();
+            .value.toString().toUpperCase();
+        const inputApellido = document.querySelector("#inputApellido")
+            .value.toString().toUpperCase();
 
 
-        if (inputCarnet != "" || inputNombre != "" || inputCarrera != "") {
+        if (inputCarnet != "" || inputNombre != "" || inputApellido != "") {
             arrayEstudiantes.push(
-                new Array(inputCarnet, inputNombre, inputCarrera)
+                new Array(inputCarnet, inputNombre, inputApellido)
             );
             alert("Estudiante agregado correctamente.");
 
             document.querySelector("#inputCarnet").value = "";
             document.querySelector("#inputNombre").value = "";
-            document.querySelector("#inputCarrera").value = "";
+            document.querySelector("#inputApellido").value = "";
             document.querySelector("#inputCarnet").focus();
         } else {
             alert("Por favor complete todos los campos.");
-        }    
+        }
     }
 
     function viewEstudiantes() {
@@ -51,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
             table += "</thead>";
             table += "<tbody>";
 
-            for (let i = 0; i < arrayEstudiantes.length; i++) { 
+            for (let i = 0; i < arrayEstudiantes.length; i++) {
                 carnet = arrayEstudiantes[i][0];
                 nombre = arrayEstudiantes[i][1];
-                apellido = arrayEstudiantes[i][2];  
+                apellido = arrayEstudiantes[i][2];
 
                 table += "<tr>";
                 table += `<th scope='row' style='font-weight: bold;'>${i + 1}</th>`;
@@ -70,4 +73,5 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             alert("No se han registrado estudiantes.");
         }
+    }
 });
