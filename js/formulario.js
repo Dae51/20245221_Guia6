@@ -160,6 +160,7 @@ btnAgregarPais.onclick = () => {
    addPais();
 }
 
+// Funcion editar
 function editarPaciente(index) {
    let registro = arrayPaciente[index - 1];
 
@@ -197,6 +198,7 @@ function editarPaciente(index) {
    }
 };
 
+// Funcion eliminar
 function eliminarPaciente(index) {
    console.log(index);
    if (index > 0 || index <= arrayPaciente.length) {
